@@ -1,0 +1,22 @@
+.para{
+    width: 90%;
+}
+@media (max-width: 1000px) {
+  .para{
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .para{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .para{
+    width: 100%;
+    font-size: 20px;
+  }
+    
+}
