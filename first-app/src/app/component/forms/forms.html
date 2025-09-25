@@ -1,0 +1,55 @@
+<div class="container  d-flex flex-column align-items-center">
+  <h2 class="text-center my-4">Reactive Forms Example</h2>
+  <form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    class="p-4 border rounded shadow-sm bg-light w-100"
+    style="max-width: 500px"
+  >
+    <!-- Full Name -->
+    <div class="mb-3">
+      <label for="fullName" class="form-label">Full Name</label>
+      <input
+        id="fullName"
+        formControlName="fullName"
+        class="form-control"
+        [class.is-invalid]="form.get('fullName')?.touched && form.get('fullName')?.invalid"
+      />
+      @if(form.get('fullName')?.touched && form.get('fullName')?.invalid) {
+      <div class="invalid-feedback d-block">
+        @if(form.get('fullName')?.hasError('required')) {
+        <small>Name is required</small>
+        } @if(form.get('fullName')?.hasError('minlength')) {
+        <small>Min 3 chars</small>
+        }
+      </div>
+      }
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        id="email"
+        formControlName="email"
+        class="form-control"
+        [class.is-invalid]="form.get('email')?.touched && form.get('email')?.invalid"
+      />
+      @if(form.get('email')?.touched && form.get('email')?.invalid) {
+      <div class="invalid-feedback d-block">
+        @if(form.get('email')?.hasError('required')) {
+        <small>Email required</small>
+        } @if(form.get('email')?.hasError('email')) {
+        <small>Invalid email</small>
+        }
+      </div>
+      }
+    </div>
+
+    <!-- Buttons -->
+    <div class="d-flex gap-2">
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+      <button type="button" class="btn btn-secondary" (click)="onReset()">Reset</button>
+    </div>
+  </form>
+</div>
