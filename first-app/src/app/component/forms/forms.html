@@ -1,12 +1,11 @@
 <div class="container  d-flex flex-column align-items-center">
   <h2 class="text-center my-4">Reactive Forms Example</h2>
-  <form
+  <!-- <form
     [formGroup]="form"
     (ngSubmit)="onSubmit()"
     class="p-4 border rounded shadow-sm bg-light w-100"
     style="max-width: 500px"
   >
-    <!-- Full Name -->
     <div class="mb-3">
       <label for="fullName" class="form-label">Full Name</label>
       <input
@@ -26,7 +25,6 @@
       }
     </div>
 
-    <!-- Email -->
     <div class="mb-3">
       <label for="email" class="form-label">Email</label>
       <input
@@ -46,10 +44,19 @@
       }
     </div>
 
-    <!-- Buttons -->
     <div class="d-flex gap-2">
       <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
       <button type="button" class="btn btn-secondary" (click)="onReset()">Reset</button>
     </div>
-  </form>
+  
+  </form> -->
+
+  <!-- <form > -->
+    <input type="text" placeholder="Enter name" [formControl]="name">
+    <input type="password" name="password" id="" [formControl]="password">
+    <button  class="btn btn-primary" (click)="displayValue()">Submit</button>
+  <!-- </form> -->
+  <p>{{name.value}}</p>
+  <p>{{password.value}}</p>
+
 </div>

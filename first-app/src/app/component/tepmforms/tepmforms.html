@@ -1,0 +1,9 @@
+<form  class="form w-50 mx-auto mt-5 p-4 shadow-sm bg-light rounded border ">
+<input type="text" class="form-control mb-3" placeholder="Enter your name"/> 
+<button class="btn btn-primary " (click)="addItem()">Add</button>
+<button class="btn btn-danger" (click)="removeItem()">Remove</button>
+<!-- @if(addElement != ''){ -->
+    <div [innerHTML]="htmlContent"></div>
+    <!-- ` {{ addElement }} ` -->
+<!-- } -->
+</form>

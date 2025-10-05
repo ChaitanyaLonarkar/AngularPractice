@@ -4,7 +4,7 @@ import { Accordion } from '../../component/accordion/accordion';
 import { Forms } from '../../component/forms/forms';
 @Component({
   selector: 'app-home',
-  imports: [Forms ],
+  imports: [Forms, ],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
