@@ -5,9 +5,16 @@ import { Child } from '../child/child';
   selector: 'app-parent',
   imports: [Child],
   templateUrl: './parent.html',
-  styleUrl: './parent.css'
+  styleUrl: './parent.css',
 })
 export class Parent {
-     parentMessage: string = 'Hello from parent!';
+  parentMessage: string = 'Hello from parent!';
   parentData = { name: 'Chaitanya', age: 22 };
+
+
+  receivedData: string = '';
+
+      receiveDataFromChild(data: string) {
+        this.receivedData = data;
+      }
 }

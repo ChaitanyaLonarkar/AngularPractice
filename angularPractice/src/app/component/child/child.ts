@@ -1,13 +1,20 @@
 import { JsonPipe } from '@angular/common';
-import { Component, Input, } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-child',
   imports: [JsonPipe],
   templateUrl: './child.html',
-  styleUrl: './child.css'
+  styleUrl: './child.css',
 })
 export class Child {
   @Input() message!: string;
-   @Input() data: any; 
+  @Input() data: any;
+
+  @Output() dataToParent = new EventEmitter<string>();
+  childMessage: string = 'chaitanya from child';
+
+  sendDataToParent() {
+    this.dataToParent.emit(this.childMessage);
+  }
 }

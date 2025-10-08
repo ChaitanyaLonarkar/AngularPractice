@@ -1,2 +1,11 @@
 <h2>parent works!</h2>
-<app-child [message]="parentMessage" [data]="parentData" ></app-child>
+<app-child [message]="parentMessage" [data]="parentData"></app-child>
+<br>
+<br><br>
+
+
+
+<b>----------------------------------Now child will send data to parent</b> for testing purpose
+<app-child (dataToParent)="receiveDataFromChild($event)"></app-child>
+
+<p>Received data from child: {{ receivedData }}</p>
