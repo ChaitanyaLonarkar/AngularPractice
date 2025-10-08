@@ -1,0 +1,5 @@
+<p>new-parent works!</p>
+@for(i of data; track i.id) {
+    <p>{{ i.id }} - {{ i.name }}</p>
+    <button (click)="navigateToChild(i.name)">Click me</button>
+}
