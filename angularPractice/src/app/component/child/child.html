@@ -1,8 +1,9 @@
 <h3>child works!</h3>
 
-<p>Message from parent: {{ message }}</p>
+<p>Message from parent: {{ message | uppercase }}</p>
 <p>User Data from parent: {{ data | json }}</p>
+<p>this is for testing custom pipes {{ data.name | customPipe }}</p>
 
 
 <h4>now button will send data to parent</h4>
- <button (click)="sendDataToParent()">Send Data</button>
+<button (click)="sendDataToParent()">Send Data</button>
