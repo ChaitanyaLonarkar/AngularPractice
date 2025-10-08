@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { JsonPipe } from '@angular/common';
+import { Component, Input, } from '@angular/core';
 
 @Component({
   selector: 'app-child',
-  imports: [],
+  imports: [JsonPipe],
   templateUrl: './child.html',
   styleUrl: './child.css'
 })
 export class Child {
-
+  @Input() message!: string;
+   @Input() data: any; 
 }
