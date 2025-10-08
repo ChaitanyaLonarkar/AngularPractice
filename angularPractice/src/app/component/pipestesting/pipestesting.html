@@ -1,0 +1,11 @@
+<p>pipestesting works!</p>
+
+<h3>check filter pipe works!</h3>
+
+<input type="text" placeholder="Search by name or email" [(ngModel)]="searchText" />
+<ul>
+    @for(user of users | filterPipe :searchText; track user.id) {
+
+        <li >{{ user.name }} - {{ user.email }}</li>
+    }
+</ul>
