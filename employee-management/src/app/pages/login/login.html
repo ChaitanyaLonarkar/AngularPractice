@@ -1,1 +1,40 @@
-<p>login works!</p>
+<mat-card class="login-card">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <mat-card-header>
+      <h2>Login</h2>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-form-field appearance="fill" class="full">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+        <mat-icon matSuffix>email</mat-icon>
+
+        @if (form.get('email')?.hasError('required') && form.get('email')?.touched) {
+        <mat-error>Email required</mat-error>
+        } 
+        @if (form.get('email')?.hasError('email')) {
+        <mat-error>Invalid email</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password" />
+        <mat-icon matSuffix>lock</mat-icon>
+
+        @if (form.get('password')?.hasError('required') && form.get('password')?.touched) {
+        <mat-error>Password required</mat-error>
+        } 
+        @if (form.get('password')?.hasError('minlength')) {
+        <mat-error>Minimum 6 chars</mat-error>
+        }
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+        Login
+      </button>
+    </mat-card-content>
+  </form>
+</mat-card>
+
+<!-- <button mat-raised-button color="primary">Click Me</button> -->
