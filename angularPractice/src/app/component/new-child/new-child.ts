@@ -10,9 +10,14 @@ import { ActivatedRoute } from '@angular/router';
 export class NewChild {
   name: any = '';
  constructor(private route: ActivatedRoute){
-    this.route.paramMap.subscribe(params => {
-      console.log(params.get('name'));
-      this.name = params.get('name');
-    });
+    // this.route.paramMap.subscribe(params => {
+    //   console.log(params.get('name'),"asdfsdfa");
+    //   this.name = params.get('name');
+    // });
  }
+ ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.name =  params.get('name'); 
+    });
+  }
 }
