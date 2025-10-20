@@ -1,4 +1,4 @@
-export class Employee {
+export class EmployeeModel {
   id: number | undefined;
   name: string | undefined;
   email!: string;

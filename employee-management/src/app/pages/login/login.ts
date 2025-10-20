@@ -1,5 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatError, MatFormField, MatFormFieldModule, MatLabel } from '@angular/material/form-field';
@@ -10,7 +16,17 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [MatError, MatFormFieldModule, MatFormField, MatLabel, MatCardModule, MatButtonModule,MatInputModule,MatIconModule,ReactiveFormsModule],
+  imports: [
+    MatError,
+    MatFormFieldModule,
+    // MatFormField,
+    // MatLabel,
+    MatCardModule,
+    MatButtonModule,
+    MatInputModule,
+    MatIconModule,
+    ReactiveFormsModule,
+  ],
   templateUrl: './login.html',
   styleUrl: './login.scss',
 })
@@ -35,6 +51,5 @@ export class Login {
     // demo login: accept any valid form
     localStorage.setItem('token', 'demo-token');
     this.router.navigate(['/dashboard/employees']);
-
   }
 }
