@@ -13,6 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { EmployeeModel } from '../../models/employee.model';
 import { MatChipsModule } from '@angular/material/chips';
 import { NgStyle } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 
@@ -30,7 +31,7 @@ export class EmployeeList implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private svc: Employee, private dialog: MatDialog, private snack: MatSnackBar) {}
+  constructor(private svc: Employee, private dialog: MatDialog, private snack: MatSnackBar, private router: Router) {}
 
   ngOnInit() {
     console.log('ngOnInit -> loading employee list');
@@ -60,8 +61,13 @@ export class EmployeeList implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  view(id: number) { /* navigate to detail */ }
-  edit(id: number) { /* navigate to edit route */ }
+  view(id: number) { 
+    // navigate to view route
+    this.router.navigate(['/dashboard/employees', id]);
+  }
+  edit(id: number) { /* navigate to edit route */
+    this.router.navigate(['/dashboard/employees/edit', id]);
+   }
 
   // delete(emp: Employee) {
   //   const d = this.dialog.open(DeleteConfirmDialogComponent, { data: emp });

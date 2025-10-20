@@ -1,0 +1,56 @@
+mat-card {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  }
+}
+
+mat-card-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #2e3b55;
+  margin-bottom: 0.25rem;
+}
+
+mat-card-subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+mat-card-content {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+
+  p {
+    margin: 0.5rem 0;
+  }
+
+  strong {
+    color: #374151;
+  }
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-chip {
+  background: #e0e7ff;
+  color: #1e3a8a;
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}

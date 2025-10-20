@@ -1,1 +1,23 @@
 <p>employee-detail works!</p>
+@if (employee) {
+  <mat-card>
+    <mat-card-title>{{ employee.name }}</mat-card-title>
+    <mat-card-subtitle>
+      Deparatment {{ employee.department }} <br> Age {{ employee.age }}
+    </mat-card-subtitle>
+
+    <mat-card-content>
+      <p><strong>Email:</strong> {{ employee.email }}</p>
+
+      <p>
+        <strong>Skills:</strong>
+        @for (s of employee.skills; let i = $index; track i) {
+          {{ s }}
+          <!-- @if (i < employee.skills.length - 1) {
+            ,
+          } -->
+        }
+      </p>
+    </mat-card-content>
+  </mat-card>
+}
