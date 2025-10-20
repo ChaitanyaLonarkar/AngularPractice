@@ -88,6 +88,8 @@ export class EmployeeForm implements OnInit {
   save(): void {
     if (this.form.invalid) return;
 
+    console.log(this.form.value);
+
     const payload = { ...this.form.value };
     console.log('Payload:', payload);
 
